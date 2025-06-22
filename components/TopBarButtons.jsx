@@ -17,7 +17,7 @@ export default function TopBarButtons({isBackButton = true, isCartButton = true}
                 style={styles.backButton}
                 //onPress={() => router.back()
                 // onPress={() => navigation.goBack()
-                onPress={() => router.replace("home")
+                onPress={() => router.replace("/home")
                 }
               >
                 <Ionicons name="chevron-back-circle-sharp" 
@@ -44,10 +44,10 @@ export default function TopBarButtons({isBackButton = true, isCartButton = true}
 const styles = StyleSheet.create({
     topBarButtonsContainer: {
         position: "absolute",
-        top: 10,
+        top: 0,
         left: 0,
         right: 0,
-        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 20 : 40,
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 0 : 40,
         paddingHorizontal: 16,
         flexDirection: "row",
         justifyContent: "space-between",

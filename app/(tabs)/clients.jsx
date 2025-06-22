@@ -57,8 +57,8 @@ const Clients = () => {
     <View style={styles.container}>
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.header}>
-        <TopBarButtons isBackButton={false} style={{top: 0}}/>
         <Text style={styles.headerText}>Clients</Text>
+        <TopBarButtons isBackButton={false} />
       </View>
 
       <FlatList
@@ -105,8 +105,8 @@ const styles = StyleSheet.create({
     right: 0,
     zIndex: 1,
     backgroundColor: Colors.PRIMARY,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 10 : 60,
-    paddingBottom: 18,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 2 : 60,
+    paddingBottom: 15,
     alignItems: "center",
     justifyContent: "center",
   },

@@ -1,10 +1,11 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { products } from '../data/products';
 import { useStock } from '../lib/StockContext';
 import { useCartStore } from '../store/cartStore';
+import { StatusBar } from 'react-native';
 
 const categories = ['Tout', 'Huile', 'Filtre', 'Grand'];
 export default function ShopScreen({selectedServices, setSelectedServices}) {
@@ -187,7 +188,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     paddingHorizontal: 16,
-    paddingTop: 60,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 10 : 60,
     height: "100%",
     flex: 1,
   },    

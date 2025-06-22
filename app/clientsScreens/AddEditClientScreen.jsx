@@ -69,7 +69,7 @@ const AddEditClientScreen = ({ route }) => {
     } else {
       addClient(clientData);
     }
-    navigation.goBack();
+    navigation.replace("clients");
   };
 
   const onClear = () => {
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     paddingLeft: 70,
     alignItems: "flex-start",
     justifyContent: "center",
-    marginBottom: 10,
+    marginBottom: 15,
     borderBottomWidth: 1,
     borderBottomColor: Colors.GRAY.LIGHT,
   },
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "100%",
     top: 60,
-    paddingHorizontal: 20,
+    padding: 20,
     paddingBottom: 40,
   },
   containers: {

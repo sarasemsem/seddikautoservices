@@ -33,13 +33,14 @@ export default function Home() {
     { id: 4, name: "Entretien Mecanique" },
   ]);
 
-  const [cardsItem, setCardsItem] = useState([
-    { id: 0, title: "Réparation", description: "Divers réparations", price: 4.6, icon: require("../../assets/images/mainBackground.jpg") },
-    { id: 1, title: "Lavage", description: "Lavage exterieur et interieur", price: 4.5, icon: require("../../assets/images/care-washing.jpg") },
-    { id: 2, title: "Boutique", description: "Changement de pneus", price: 4.5, icon: require("../../assets/images/boutique.jpg") },
-    { id: 3, title: "Vidange", description: "Huile, filtre, etc", price: 4.5, icon: require("../../assets/images/oil-changing.jpg") },
+ const [cardsItem, setCardsItem] = useState([
+  { id: 0, title: "Réparation", categoryId: 1, description: "Divers réparations", price: 4.6, icon: require("../../assets/images/mainBackground.jpg") },
+  { id: 1, title: "Lavage", categoryId: 2, description: "Lavage exterieur et interieur", price: 4.5, icon: require("../../assets/images/care-washing.jpg") },
+  { id: 2, title: "Boutique", categoryId: 3, description: "Changement de pneus", price: 4.5, icon: require("../../assets/images/boutique.jpg") },
+  { id: 3, title: "Vidange", categoryId: 4, description: "Huile, filtre, etc", price: 4.5, icon: require("../../assets/images/oil-changing.jpg") },
 /*     { id: 4, title: "Entretien Mecanique", description: "Entretien mecanique", price: 4.5, icon: require("../../assets/images/entretien.jpg") },
- */  ]);
+ */]);
+
   
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [clients, setClients] = useState<Client[]>([]);
@@ -57,6 +58,9 @@ export default function Home() {
     ];
     setClients(sampleClients);
   }, []);
+  const filteredCardsItem = selectedCategory.id === 0
+  ? cardsItem
+  : cardsItem.filter(item => item.categoryId === selectedCategory.id);
 
   // Handle search text changes
   useEffect(() => {
@@ -229,7 +233,7 @@ export default function Home() {
         {/* Services List */}
         <View style={{flex: 1}}>
           <FlatList
-            data={cardsItem}
+            data={filteredCardsItem}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item, index }) => (
               <TouchableOpacity 
@@ -297,7 +301,7 @@ const styles = StyleSheet.create({
   searchBar: {
     flexDirection: "row",
     alignItems: "center",
-    //padding: 10,
+    paddingHorizontal: 10,
     width: "98%",
     backgroundColor: "white",
     borderRadius: 20,
