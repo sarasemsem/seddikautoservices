@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "700587274975",
+    "project_id": "seddiksautoservices",
+    "storage_bucket": "seddiksautoservices.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700587274975:android:9f47904ce2eb98c39def6a",
+        "android_client_info": {
+          "package_name": "com.sarasemsem.seddiksauto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_zMrAYUSNoMosp9eS_ttPELQ5EvPUdpc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
