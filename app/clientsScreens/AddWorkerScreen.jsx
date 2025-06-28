@@ -130,7 +130,7 @@ export default function AddWorkerScreen() {
         <Text style={styles.saveButtonText}>Enregistrer</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.cancelButton} onPress={() => navigation.replace("/clients")}>
+      <TouchableOpacity style={styles.cancelButton} onPress={() => router.replace("/clients")}>
         <Text style={styles.cancelButtonText}>Annuler</Text>
       </TouchableOpacity>
     </ScrollView>

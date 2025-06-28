@@ -1,8 +1,9 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Colors from '../../constants/Colors';
+import { Platform } from 'react-native';
 
 const services = [
   {
@@ -139,11 +140,10 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 2 : 45,
     alignItems: 'center',
     padding: 16,
     backgroundColor: Colors.PRIMARY,
-    paddingTop : 45,
-
   },
   headerTitle: {
     fontSize: 20,

@@ -10,7 +10,10 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.sarasemsem.seddiksauto"
+      "bundleIdentifier": "com.sarasemsem.seddiksauto",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -42,8 +45,7 @@
     },
     "extra": {
       "router": {},
-      "eas": {
-      }
+      "eas": {}
     },
     "owner": "sarasemsem"
   }

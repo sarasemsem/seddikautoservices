@@ -1,3 +1,4 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { AuthProvider } from "@/lib/authContext";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
@@ -18,15 +19,18 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
+  
   return (
     <SafeAreaProvider>
-      <AuthProvider> 
-      <ClientsProvider>
-      <StockProvider>
-          <Stack screenOptions={{ headerShown: false }} />
-      </StockProvider>
-      </ClientsProvider>
-      </AuthProvider>
+      <NavigationContainer>
+        <AuthProvider> 
+          <ClientsProvider>
+            <StockProvider>
+              <Stack screenOptions={{ headerShown: false }} />
+            </StockProvider>
+          </ClientsProvider>
+        </AuthProvider>
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }

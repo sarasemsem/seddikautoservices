@@ -11,13 +11,15 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
-    "@react-native-async-storage/async-storage": "2.1.2",
-    "@react-native-picker/picker": "^2.11.0",
-    "@react-navigation/bottom-tabs": "^7.3.10",
-    "@react-navigation/elements": "^2.3.8",
-    "@react-navigation/material-top-tabs": "^7.2.12",
-    "@react-navigation/native": "^7.1.8",
-    "expo": "53.0.11",
+    "@react-native-async-storage/async-storage": "^1.24.0",
+    "@react-native-picker/picker": "2.11.0",
+    "@react-navigation/bottom-tabs": "6.5.10",
+    "@react-navigation/material-top-tabs": "6.6.2",
+    "@react-navigation/native": "6.1.18",
+    "@react-navigation/native-stack": "6.9.22",
+    "ajv": "^8.12.0",
+    "ajv-keywords": "^5.1.0",
+    "expo": "53.0.12",
     "expo-blur": "~14.1.5",
     "expo-constants": "17.1.6",
     "expo-dev-client": "~5.2.0",
@@ -32,12 +34,12 @@
     "expo-status-bar": "~2.2.3",
     "expo-symbols": "~0.4.4",
     "expo-system-ui": "~5.0.7",
-    "expo-web-browser": "~14.1.6",
+    "expo-web-browser": "~14.2.0",
     "firebase": "^11.9.1",
     "lodash": "^4.17.21",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-native": "0.79.3",
+    "react-native": "0.79.4",
     "react-native-animatable": "^1.4.0",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-get-random-values": "^1.11.0",
@@ -46,14 +48,13 @@
     "react-native-paper": "^5.14.1",
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
-    "react-native-screens": "4.11.1",
+    "react-native-screens": "~4.11.1",
     "react-native-select-dropdown": "^4.0.1",
+    "react-native-swipe-list-view": "^3.2.9",
     "react-native-tab-view": "^4.0.12",
     "react-native-web": "~0.20.0",
     "react-native-webview": "13.13.5",
-    "zustand": "^5.0.4",
-    "undefined": "\\",
-    "@reactnavigation/native": "7.1.6"
+    "zustand": "^5.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -64,5 +65,65 @@
     "eslint-config-expo": "~9.2.0",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "private": true,
+  "expo": {
+    "name": "seddik-service-auto",
+    "slug": "seddik-service-auto",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "scheme": "seddiksauto",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sarasemsem.seddiksauto"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.sarasemsem.seddiksauto"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/logo.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {}
+    },
+    "owner": "sarasemsem"
+  },
+  "expoDoctor": {
+    "reactNativeDirectoryCheck": {
+      "exclude": [
+        "ajv",
+        "ajv-keywords",
+        "firebase",
+        "lodash",
+        "react-native-select-dropdown",
+        "react-native-swipe-list-view"
+      ],
+      "listUnknownPackages": false
+    }
+  }
 }

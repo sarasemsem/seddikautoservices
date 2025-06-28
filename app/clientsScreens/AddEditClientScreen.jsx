@@ -1,5 +1,5 @@
 import { FontAwesome5 } from "@expo/vector-icons";
-import { useNavigation } from "expo-router";
+import { useNavigation, useRouter } from "expo-router";
 import React, { useEffect, useState } from "react";
 import {
   Alert,
@@ -18,10 +18,15 @@ import Colors from "../../constants/Colors";
 import { useClientsContext } from "../../lib/ClientsContext";
 
 const AddEditClientScreen = ({ route }) => {
-    const navigation = useNavigation();
+    const router = useRouter();
     const { addClient, updateClient } = useClientsContext();
   const clientToEdit = route?.params?.client || null;
-
+  const [clientsCopy, setClientsCopy] = useState([
+    { id: 1, name: "Mohamed hedi", phone: "555-1234", vehicle: "Toyota Camry", licensePlate: "ABC-123", },
+    { id: 2, name: "Nabil youssef", phone: "555-5678", vehicle: "Honda Civic", licensePlate: "XYZ-789", },
+    { id: 3, name: "yassin korba", phone: "555-9012", vehicle: "Toyota Camry", licensePlate: "ABC-123", },
+    { id: 4, name: "Nabil hedi", phone: "555-3456", vehicle: "Honda Civic", licensePlate: "XYZ-789", },
+  ]);
   // State for client fields
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -57,7 +62,6 @@ const AddEditClientScreen = ({ route }) => {
     }
 
     const clientData = {
-      id: clientToEdit?.id || Date.now().toString(),
       name: name.trim(),
       phone: phone.trim(),
       vehicle: vehicle.trim(),
@@ -69,7 +73,8 @@ const AddEditClientScreen = ({ route }) => {
     } else {
       addClient(clientData);
     }
-    navigation.replace("clients");
+    //navigation.navigate("clients");
+    router.replace("clients");
   };
 
   const onClear = () => {
