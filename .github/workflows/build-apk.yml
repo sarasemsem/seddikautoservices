@@ -25,7 +25,7 @@ jobs:
       - name: Build APK
         run: eas build --platform android --profile preview --non-interactive --local
         env:
-          EAS_TOKEN: ${{ secrets.EAS_TOKEN }}
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
