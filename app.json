@@ -45,7 +45,9 @@
     },
     "extra": {
       "router": {},
-      "eas": {}
+      "eas": {
+        "projectId": "369195c8-3c27-4544-ba30-eda5067bebf8"
+      }
     },
     "owner": "sarasemsem"
   }
