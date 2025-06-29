@@ -35,8 +35,8 @@ export default function Login() {
               </View>
               <TouchableOpacity
                 style={styles.buttonContainer}
-                //onPress={() => router.push('/logIn')}
-                onPress={() => router.push("/home")}
+                onPress={() => router.push('/logIn')}
+                //onPress={() => router.push("/home")}
               >
                 <Text style={styles.startText}>Se connecter</Text>
               </TouchableOpacity>
